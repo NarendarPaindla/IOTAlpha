@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EmployeeLeaveManagement">
+        <property name="context-root" value="EmployeeLeaveManagement"/>
+        <property name="java-output-path" value="/EmployeeLeaveManagement/build/classes"/>
+    </wb-module>
+</project-modules>
