@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Register | page</title>
-<style>
- body {
+  <head>
+    <title>Register</title>
+    <style>
+      /* Basic styling for the registration page */
+      body {
         font-family: Arial, sans-serif;
         background-color: #f8f9fa;
       }
@@ -59,37 +57,41 @@
       a:hover {
         text-decoration: underline;
       }
-</style>
-</head>
-<body>
-<div class="container">
-<h2>Login</h2>
-<form action="" method="post">
-<div>
-<label class="form-label">Username:</label>
-<input type="text" name="username" class="form-control" required>
-</div>
-<div>
-<label class="form-label">Email:</label>
-<input type="email" name="email" class="form-control" required>
-</div>
-<div>
-<label class="form-label">Password:</label>
-<input type="password" name="password" class="form-control" required>
-</div>
-<div>
-<label class="form-label">Role:</label>
-<select name="role" class="from-control" required>
-<option value="employee">Employee</option>
-<option value="manager">Manager</option>
-<option value="admin">Admin</option>
-</select>
-</div>
-<button type="submit" class="btn">Register</button>
-</form>
-<p style="margin-top: 15px;">
-Already registered?  <a href="login.jsp">Login here</a>
-</p>
-</div>
-</body>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <%-- Display message if available --%>
+      <% if(request.getParameter("msg") != null) { %>
+         <div class="alert"><%= request.getParameter("msg") %></div>
+      <% } %>
+      <form action="register" method="post">
+        <div>
+          <label class="form-label">Username:</label>
+          <input type="text" name="username" class="form-control" required>
+        </div>
+        <div>
+          <label class="form-label">Email:</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div>
+          <label class="form-label">Password:</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <div>
+          <label class="form-label">Role:</label>
+          <select name="role" class="form-control" required>
+            <option value="employee">Employee</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p style="margin-top: 15px;">
+         Already registered? <a href="login.jsp">Login here</a>
+      </p>
+    </div>
+  </body>
 </html>
