@@ -72,6 +72,9 @@
     <div class="container">
       <div class="header">
          <h2>Welcome, <%= session.getAttribute("username") %></h2>
+         <% if (request.getParameter("msg")!=null){ %>
+<div class="alert"><%=request.getParameter("msg") %></div>
+<%} %>
          <a href="logout.jsp" class="btn">Logout</a>
       </div>
       <ul class="nav-tabs">
